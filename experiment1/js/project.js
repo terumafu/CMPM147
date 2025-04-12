@@ -6,28 +6,55 @@
 
 // Constants - User-servicable parts
 // In a longer project I like to put these in a separate file
-
-// define a class
-class MyProjectClass {
-  // constructor function
-  constructor(param1, param2) {
-    // set properties using 'this' keyword
-    this.property1 = param1;
-    this.property2 = param2;
-  }
+const fillers = {
+  main: ["Raspberry", "Blueberry", "Huckleberry", "Strawberry", "Melon", "Citrus", "Lemon", "Scandanavian"],
+  pre: ["Sour", "Sugar", "Giga", "Dyna", "Crazy", "Wacko"],
+  post: ["Swimmers", "Blast", "Bombs","Chews", "Blitzers", "Gumdrops", "Jawbreakers"],
+  descriptor: ["ooiest", "gooiest", "most sour", "most delicious", "sweetest", "tastiest", "hardest", "crackliest"],
   
-  // define a method
-  myMethod() {
-    // code to run when method is called
+};
+
+const template = `Hey you!
+
+Have you heard of the new candy thats selling like hotcakes? \n
+$pre-$main $post is the $descriptor candy thats getting swept off the shelves!
+`;
+const slotPattern = /\$(\w+)/;
+  
+function replacer(match, name) {
+  let options = fillers[name];
+  if (options) {
+    return options[Math.floor(Math.random() * options.length)];
+  } else {
+    return `<UNKNOWN:${name}>`;
   }
 }
 
-function main() {
-  // create an instance of the class
-  let myInstance = new MyProjectClass("value1", "value2");
+function generate() {
+  let story = template;
+  while (story.match(slotPattern)) {
+    story = story.replace(slotPattern, replacer);
+  }
 
-  // call a method on the instance
-  myInstance.myMethod();
+  /* global box */
+  $("#box").text(story);
+
+}
+
+$("#clicker").click(generate);
+  
+  generate();
+
+function main() {
+  
+  
+  
+  // STUDENTS: You don't need to edit code below this line.
+  
+  
+  /* global clicker */
+  
+  
 }
 
 // let's get this party started - uncomment me
