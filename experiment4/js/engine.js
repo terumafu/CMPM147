@@ -107,6 +107,12 @@ function rebuildWorld(key) {
 }
 
 function mouseClicked() {
+  if (mouseX > 800 || mouseX < 0){
+    return;
+  }
+  if (mouseY > 600 || mouseY < 0){
+    return;
+  }
   let world_pos = screenToWorld(
     [0 - mouseX, mouseY],
     [camera_offset.x, camera_offset.y]

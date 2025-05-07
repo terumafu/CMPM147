@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
+	<main id="content">
+		<section>
+
+			<h1>Experiment X - Subject/Topic</h1>
+
+			<div class="minor-section">
+				<div id="canvas-container">
+					<!-- canvas will be added here -->
+				</div>
+				<head>
+					<title>Hello!</title>
+					<meta charset="utf-8" />
+					<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+					<meta name="viewport" content="width=device-width, initial-scale=1" />
+					<link rel="stylesheet" href="./css/style.css" />
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+					<script src="./js/my_design.js" defer></script>
+					<script src="./js/sketch.js" defer></script>
+				  </head>
+				  <body>
+					<select id="dropper"></select>
+					<button id="restart">
+					  restart
+					</button>
+					<p>
+					  Mutation rate (<span id="rate"></span>%):<br /><input
+						id="slider"
+						type="range"
+						min="1"
+						max="100"
+						value="100"
+					  />
+					</p>
+					<p id="active"></p>
+					<p>Active score: <span id="activeScore"></span></p>
+					<p>Exploration rate: <span id="fpsCounter"></span> fps</p>
+					<p id="best"></p>
+					<p>Best score: <span id="bestScore"></span></p>
+					<p id="memory" data-max-items="16"></p>
+				  </body>
+                <div class="fullscreen-box">
+                    <button id="fullscreen">Fullscreen</button>
+                </div>
+			</div>
+
+			<div class="minor-section">
+				<h2>Description</h2>
+				<p>This is an image mutation generator that uses 3 images, the cover art for Sidereal Confluence, the Amongus art, and a picture of my cat. Color is really important to me so I wanted to prioritize it in this project and having images with very distinct color variation helpef</p>
+			</div>
+
+			<div class="minor-section">
+				<h2>Technical</h2>
+				<p>To accomplish this, I took samples from pixels on the image and kind of made the pixels larger, then through the mutation it randomly makes some larger than others which "warps" the shape created</p>
+			</div>
+
+			<div class="minor-section">
+				<h2>Reflection</h2>
+				<p>This was fun to do! I wish I had more time to work on it but I have been finishing up my work at my lab and it is just overall quite a lot</p>
+			</div>
+
+		</section>
+		<nav id="links" class="minor-section">
+			<!-- Put link back to homepage here. -->
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+		</nav>
+	</main>
+</body>
+</html>
